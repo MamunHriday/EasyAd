@@ -4,7 +4,7 @@
 ### 1. Clone project
 > Make sure you have already installed python3 and git.
 ```
-$ git clone https://github.com/superior-prog/EasyAd.git
+$ git clone https://github.com/MamunHriday/EasyAd.git
 ```
 
 ### 2. Create an virtual environment
