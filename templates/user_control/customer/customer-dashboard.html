@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block title %} - Customer Dashboard{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mt-4 ">
+        {% if ad_list %}
+
+        {% for ad_item in ad_list %}
+        <div class="col-lg-4 mb-3">
+            <div class="card" style="width: 18rem;">
+                <div class="bg-image">
+
+                    {% if ad_item.image %}
+                    <img
+                            src="{{ ad_item.image.url }}"
+                            class="card-img-top"
+                            alt="Ad ID {{ ad_item.id }}"
+                            height="200px"
+                    />
+                    {% else %}
+                    <img
+                            src="{% static 'assets/images/placeholder.png' %}"
+                            class="card-img-top"
+                            alt="Ad ID {{ ad_item.id }}"
+                            height="200px"
+                    />
+                    {% endif %}
+
+                    <div class="mask" style="background-color: rgba(0, 0, 0, 0.3)">
+                        <div class="d-flex justify-content-center align-items-end h-100">
+                            <p class="text-dark mb-0 fs-6 text-center">
+                                {{ ad_item.width }} x {{ ad_item.height }} {{ ad_item.size_scale }}<br/>
+                                {{ ad_item.price }} BDT per {{ ad_item.price_rate }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-header">
+                    <p class="card-title fs-6"><strong>Location: </strong> {{ ad_item.location }}</p>
+                </div>
+                <div class="card-body">
+                    <p class="card-text fs-6">
+                        <strong>Facing: </strong>{{ ad_item.facing }}<br/>
+
+                    </p>
+
+                    <a href="{% url 'ad-detail' ad_item.pk %}" type="button" class="btn btn-primary mb-2">
+                        See More<i class="fas fa-arrow-right ms-2"></i></a>
+
+                    <div class="card-footer">
+                        <p class="fs-6">Posted: {{ ad_item.date_posted|timesince }} ago</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor%}
+
+        {% else %}
+        <p class="mt-5 text-muted">No ads yet.</p>
+        {% endif %}
+    </div>
+
+</div>
+
+{% endblock %}

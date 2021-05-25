@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} - Home{% endblock %}
+
+{% block content %}
+
+<div class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white"
+     style="background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/003.jpg'); height: 100vh;">
+    <h1 class="font-weight-bold mt-5 mb-5">
+        EasyAd <br/> Advertisement through Billboard and Vehicle
+    </h1>
+
+    <div class="row mb-5 mt-5">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+            <p class="h3 text-white">For Advertisers</p>
+            <p>
+                Want to utilize your Vehicle or Billboard?
+            </p>
+            <a href="{% url 'advertiser-register' %}"
+               class="btn btn-primary btn-lg btn-block text-center text-white">
+                <i class="fas fa-plus me-2"></i>Sign Up and Advertise Empty Space</a>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+            <p class="h3 text-white">For Customers</p>
+            <p>
+                Need to promote your company? Do not be late. We are here for you.
+            </p>
+            <a href="{% url 'customer-register' %}"
+               class="btn btn-primary btn-lg btn-block text-center text-white btn-search">
+                <i class="fas fa-search me-2"></i>Sign Up and Find Empty Space</a>
+        </div>
+        <h1 class="mt-5">
+            EasyAd is an integrated market communication agency in Bangladesh.
+        </h1>
+    </div>
+</div>
+
+
+<section class="home-section section-hero overlay bg-image" id="home-section">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-md-12">
+                <div class="mb-5 text-center">
+                    <h5 class="text-dark">
+                        EasyAd is there for all brand marketing, creative, advertising and digital marketing for you,
+                        whether you are launching your business for the first time or trying to bring your organization
+                        on a virtual platform online or even for enhancing your company’s present situation.
+                        Our aim is to transform your vision into reality, within a specified time limit and
+                        providing the best digital marketing services. As a leading branding agencyEasyAd works
+                        to build your BRAND, thereby sustaining customer trust with guaranteed satisfaction.
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<hr class="mb-5"/>
+
+<div class="">
+    <div class="">
+        <div class="container">
+            <h2 class="text-center text-dark font-weight-bold">How it works</h2>
+            <p class="text-center ">
+                “EasyAd” is a web-based online advertisement system which is a website
+                which will be very much user friendly and convenient for the consumers.
+                Through this website, service providers/vendors can easily provide their service and
+                consumers can rent a billboard or use a vehicle for advertisement.
+<!--                Also, consumers can be able to see the available billboards and vehicle of all places-->
+<!--                from his home. This website will be dynamic and managed by a suitable authority.-->
+<!--                The main purpose of developing this system was to enable to rent a billboard or use a-->
+<!--                vehicle for advertisement. The system has been designed in such a way that it is very-->
+<!--                cost-efficient therefore a customer or a company outside the metropolitan cities can-->
+<!--                afford it as well. The user interface design framework has been designed to make the-->
+<!--                system user-friendly therefore a non-IT technician will be able use the system to the full extent.-->
+            </p>
+        </div>
+    </div>
+    <!-- /.how-it-works-title -->
+
+    <hr class="mt-5 mb-5 ms-5 me-5"/>
+
+    <div class="row">
+
+        <div class="col-md-4 text-center">
+            <img alt="how-it-works illustration" class="" style="height: 180px; width: 250px"
+                 src="{% static 'assets/images/find.jpg' %}">
+            <h4 class="mt-2">Find Space</h4>
+            <div class="description ">
+                <p>Find the perfect place for your advertisement.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4 text-center">
+            <img alt="how-it-works illustration " class=" " style="height: 180px; width: 250px"
+                 src="{% static 'assets/images/pay.jpg' %}">
+            <h4 class="mt-2">Pay</h4>
+            <div class="description ">
+                <p>Contactless, and Secure Payment.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4 text-center">
+            <img alt="how-it-works illustration " class=" " style="height: 180px; width: 250px"
+                 src="{% static 'assets/images/advertise.png' %}">
+            <h4 class="mt-2">Advertise</h4>
+            <div class=" ">
+                <p>Run your Advertisement Campaign</p>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.how-it-works-tiles -->
+</div>
+
+{% endblock %}

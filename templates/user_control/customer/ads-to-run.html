@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block title %} - Ads to Run{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        {% if not ads_to_run %}
+        <h3 class="mt-3">No Ads to Run</h3>
+
+        {% else %}
+        {% for order_item in ads_to_run %}
+        <div class="col mt-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-header">
+                    <h5 class="card-title fs-6 mt-2"><strong>Order ID: </strong>{{ order_item.id }}</h5>
+                </div>
+
+                <div class="card-body">
+                    <p class="card-text fs-6">
+                        <strong>Advertiser: </strong>
+                        {{ order_item.advertise.advertiser.user.name }}<br/>
+                        <strong>Ad Duration: </strong>{{ order_item.duration }} {{ order_item.price_rate }}<br/>
+                        <strong>Total Paid Amount: </strong>{{ order_item.total_cost }} BDT<br/>
+                    </p>
+                    <a href="{% url 'order-details' order_item.id %}"
+                                    type="button"
+                                    class="btn btn-outline-primary mb-3"
+                                    data-mdb-ripple-color="#">
+                        Order Details
+                    </a>
+
+                    <div class="card-footer">
+                        <p class="fs-6">Ordered: {{ order_item.date_created|timesince }} ago</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}
